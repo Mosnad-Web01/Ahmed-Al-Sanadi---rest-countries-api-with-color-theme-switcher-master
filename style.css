@@ -12,7 +12,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 body {
 	font-family: "Nunito Sans", sans-serif;
@@ -84,18 +84,17 @@ header input[type="text"]::placeholder {
 body.dark-mode header {
 	background-color: var(--dark-mode-element-background);
 }
-body.dark-mode .country-card{
-  background-color: var(--dark-mode-element-background);
-  color: var(--dark-mode-element-text);
+body.dark-mode .country-card {
+	background-color: var(--dark-mode-element-background);
+	color: var(--dark-mode-element-text);
 }
 body.dark-mode .country-card p,
 body.dark-mode .country-card h1 {
-  background-color: var(--dark-mode-element-background);
-  color: var(--dark-mode-element-text);
+	background-color: var(--dark-mode-element-background);
+	color: var(--dark-mode-element-text);
 }
-body.dark-mode .country-card a
-{
-  background-color: hsl(207, 79%, 29%);
+body.dark-mode .country-card a {
+	background-color: hsl(207, 79%, 29%);
 }
 body.dark-mode header input[type="text"],
 body.dark-mode header select,
@@ -221,7 +220,7 @@ body.dark-mode .country-card img {
 }
 
 body.dark-mode .country-card a {
-  background-color: hsl(207, 79%, 29%);
+	background-color: hsl(207, 79%, 29%);
 	color: white;
 }
 
