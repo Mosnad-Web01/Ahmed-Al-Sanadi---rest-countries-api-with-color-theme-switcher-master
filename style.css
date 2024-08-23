@@ -8,8 +8,12 @@
 	--dark-mode-element-background: hsl(209, 23%, 22%);
 	--dark-mode-element-text: hsl(0, 0%, 100%);
 }
+
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 
+* {
+  box-sizing: border-box;
+}
 body {
 	font-family: "Nunito Sans", sans-serif;
 	margin: 0;
@@ -17,17 +21,12 @@ body {
 	background-color: var(--light-mode-background);
 	color: var(--light-mode-text);
 	min-height: 100vh;
-	background-color: hsl(0, 0%, 98%);
-	color: hsl(200, 15%, 8%);
-  min-height: 100vh;
 }
 
 /* Dark Mode */
 body.dark-mode {
 	background-color: var(--dark-mode-background);
 	color: var(--dark-mode-text);
-	background-color: hsl(207, 26%, 17%);
-	color: hsl(0, 0%, 100%);
 }
 
 .container {
@@ -36,12 +35,12 @@ body.dark-mode {
 	padding: 20px;
 }
 
+/* Header Styling */
 header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	background-color: var(--light-mode-element-background);
-	background-color: hsl(0, 0%, 100%);
 	padding: 20px;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 	margin-bottom: 20px;
@@ -50,13 +49,11 @@ header {
 
 header input[type="text"],
 header select {
-	padding: 10px;
+	padding: 8px;
 	font-size: 16px;
-	border: 1px solid var(--light-mode-element-text);
-	border: 1px solid hsl(0, 0%, 52%);
+	border: 1px solid var(--light-mode-text);
 	border-radius: 5px;
 	margin-left: 10px;
-	flex: 1;
 	max-width: 200px;
 }
 
@@ -69,10 +66,8 @@ header button#theme-toggle {
 	font-size: 16px;
 	border: none;
 	border-radius: 5px;
-	background-color: var(--light-mode-element-background);
+	background-color: hsl(207, 79%, 29%);
 	color: var(--light-mode-element-text);
-	background-color: hsl(207, 90%, 54%);
-	color: hsl(0, 0%, 100%);
 	cursor: pointer;
 	transition: background-color 0.3s;
 }
@@ -82,14 +77,12 @@ header button#theme-toggle:hover {
 }
 
 header input[type="text"]::placeholder {
-	color: var(--light-mode-element-text);
-	color: hsl(0, 0%, 52%);
+	color: var(--light-mode-text);
 }
 
 /* Dark Mode for Header */
 body.dark-mode header {
 	background-color: var(--dark-mode-element-background);
-	background-color: hsl(209, 23%, 22%);
 }
 
 body.dark-mode header input[type="text"],
@@ -98,50 +91,45 @@ body.dark-mode header button#theme-toggle {
 	background-color: var(--dark-mode-element-background);
 	color: var(--dark-mode-element-text);
 	border-color: var(--dark-mode-element-background);
-	background-color: hsl(209, 23%, 22%);
-	color: hsl(0, 0%, 100%);
-	border-color: hsl(209, 23%, 22%);
-  border-color: aqua;
 }
-body.dark-mode header button#theme-toggle
-{
-  background-color: hsl(207, 90%, 40%);
-}
+
 body.dark-mode header button#theme-toggle:hover {
 	background-color: hsl(207, 90%, 60%);
 }
 
+/* Responsive Header */
 @media (max-width: 768px) {
 	header {
 		flex-direction: column;
 		align-items: center;
+		padding: 10px;
 	}
 
-	#search
-  {
-    display: block;
-    max-width: 330px;
-    width: 100%;
-    margin: 10px 0px;
-    padding: 8px;
-  }
+	header input[type="text"],
 	header select,
 	header button#theme-toggle {
-    padding: 10px 20px;
-    max-width: 350px;
-    width: 100%;
+		width: 100%;
+		max-width: 400px;
 		margin: 10px 0;
 	}
+}
 
+@media (max-width: 580px) {
+	header {
+		flex-direction: column;
+		padding: 10px;
+	}
 
+	header input[type="text"],
+	header select,
+	header button#theme-toggle {
+		font-size: 14px;
+	}
 }
 
 @media (max-width: 480px) {
-	body{
-    height: 100vh;
-  }
-  header {
-		padding: 15px;
+	header {
+		padding: 10px;
 	}
 
 	header input[type="text"],
@@ -152,20 +140,20 @@ body.dark-mode header button#theme-toggle:hover {
 	}
 }
 
+/* Country Cards Grid Layout */
 #country-container {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 	gap: 20px;
-  justify-content: center;
+	justify-content: center;
 }
 
 /* Country Cards */
 .country-card {
 	background: var(--light-mode-element-background);
-	background: hsl(0, 0%, 100%);
 	border-radius: 8px;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-	
+	overflow: hidden;
 	margin: 20px;
 	text-align: center;
 	transition: transform 0.2s;
@@ -175,13 +163,11 @@ body.dark-mode header button#theme-toggle:hover {
 	transform: scale(1.05);
 }
 
-/* Standardize image size */
 .country-card img {
 	width: 100%;
 	height: 200px;
 	object-fit: cover;
-	border-bottom: 1px solid var(--light-mode-element-text);
-	border-bottom: 1px solid hsl(0, 0%, 98%);
+	border-bottom: 1px solid var(--light-mode-text);
 }
 
 .country-card h2 {
@@ -192,8 +178,7 @@ body.dark-mode header button#theme-toggle:hover {
 .country-card p {
 	font-size: 14px;
 	margin: 5px 0;
-	color: var(--light-mode-element-text);
-	color: hsl(0, 0%, 52%);
+	color: var(--light-mode-text);
 }
 
 /* Style the "Show Details" link */
@@ -201,10 +186,8 @@ body.dark-mode header button#theme-toggle:hover {
 	display: inline-block;
 	margin: 15px 0;
 	padding: 10px 15px;
-	background-color: var(--light-mode-element-background);
+	background-color: hsl(207, 79%, 29%);
 	color: var(--light-mode-element-text);
-	background-color: hsl(207, 90%, 54%);
-	color: hsl(0, 0%, 100%);
 	border-radius: 5px;
 	text-decoration: none;
 	font-weight: bold;
@@ -219,20 +202,15 @@ body.dark-mode header button#theme-toggle:hover {
 body.dark-mode .country-card {
 	background: var(--dark-mode-element-background);
 	color: var(--dark-mode-element-text);
-	background: hsl(209, 23%, 22%);
-	color: hsl(0, 0%, 100%);
 }
 
 body.dark-mode .country-card img {
 	border-bottom: 1px solid var(--dark-mode-element-text);
-	border-bottom: 1px solid hsl(209, 23%, 22%);
 }
 
 body.dark-mode .country-card a {
 	background-color: var(--dark-mode-element-background);
 	color: var(--dark-mode-element-text);
-	background-color: hsl(207, 90%, 60%);
-	color: hsl(0, 0%, 100%);
 }
 
 body.dark-mode .country-card a:hover {
@@ -250,7 +228,6 @@ body.dark-mode .country-card a:hover {
 	max-width: 800px;
 	margin: 50px auto;
 	background: var(--light-mode-element-background);
-	background: hsl(0, 0%, 100%);
 	padding: 20px;
 	border-radius: 10px;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -275,12 +252,11 @@ body.dark-mode .country-card a:hover {
 }
 
 #country-details #back {
-	background-color: var(--light-mode-element-background);
+	background-color: hsl(207, 79%, 29%);
 	color: var(--light-mode-element-text);
-	background-color: hsl(207, 90%, 54%);
-	color: hsl(0, 0%, 100%);
 	border: none;
-	padding: 10px 20px;
+	padding: 10px 40px;
+	font-size: 16px;
 	border-radius: 5px;
 	cursor: pointer;
 	font-weight: bold;
@@ -290,18 +266,50 @@ body.dark-mode .country-card a:hover {
 }
 
 #country-details #back:hover {
-	background-color: hsl(207, 90%, 40%); /* A darker blue */
+	background-color: hsl(207, 90%, 40%);
 }
 
 /* Dark Mode for Details Page */
 body.dark-mode #country-details {
 	background-color: var(--dark-mode-element-background);
 	color: var(--dark-mode-element-text);
-	background-color: hsl(209, 23%, 22%);
-	color: hsl(0, 0%, 100%);
 }
 
 body.dark-mode #country-details #back {
-	background-color: var(--dark-mode-element-background);
 	background-color: hsl(207, 90%, 60%);
+	color: hsl(0, 0%, 100%);
+}
+
+/* Responsive adjustments for country cards */
+@media (max-width: 768px) {
+	#country-container {
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	}
+
+	.country-card {
+		max-width: 100%;
+	}
+}
+
+@media (max-width: 480px) {
+	#country-container {
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	}
+	#search {
+		display: block;
+		max-width: 370px;
+		padding: 8px 5px;
+		margin: 20px auto;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		font-size: 16px;
+		outline: none;
+	}
+	header select,
+	header button#theme-toggle {
+		padding: 10px 40px;
+	}
+	.country-card {
+		max-width: 100%;
+	}
 }
