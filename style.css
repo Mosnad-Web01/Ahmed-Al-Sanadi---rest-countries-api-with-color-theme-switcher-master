@@ -6,7 +6,7 @@
 	--dark-mode-background: hsl(207, 26%, 17%);
 	--dark-mode-text: hsl(0, 0%, 100%);
 	--dark-mode-element-background: hsl(209, 23%, 22%);
-	--dark-mode-element-text: hsl(0, 0%, 100%);
+	--dark-mode-element-text: hsl(0, 30%, 96%);
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
@@ -84,7 +84,19 @@ header input[type="text"]::placeholder {
 body.dark-mode header {
 	background-color: var(--dark-mode-element-background);
 }
-
+body.dark-mode .country-card{
+  background-color: var(--dark-mode-element-background);
+  color: var(--dark-mode-element-text);
+}
+body.dark-mode .country-card p,
+body.dark-mode .country-card h1 {
+  background-color: var(--dark-mode-element-background);
+  color: var(--dark-mode-element-text);
+}
+body.dark-mode .country-card a
+{
+  background-color: hsl(207, 79%, 29%);
+}
 body.dark-mode header input[type="text"],
 body.dark-mode header select,
 body.dark-mode header button#theme-toggle {
@@ -209,8 +221,8 @@ body.dark-mode .country-card img {
 }
 
 body.dark-mode .country-card a {
-	background-color: var(--dark-mode-element-background);
-	color: var(--dark-mode-element-text);
+  background-color: hsl(207, 79%, 29%);
+	color: white;
 }
 
 body.dark-mode .country-card a:hover {
